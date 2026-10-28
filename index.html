@@ -1,250 +1,272 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>機構網頁優化項目 · Phase 1 &amp; 2 進度簡報</title>
-<link rel="stylesheet" href="assets/fonts.css">
-<link rel="stylesheet" href="assets/base.css">
-<link rel="stylesheet" href="assets/animations/animations.css">
-<link rel="stylesheet" id="theme-link" href="assets/themes/pitch-deck-vc.css">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>機構網頁優化項目 — Phase 1（MC Website）最新進度</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700;800&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body class="tpl-exec"
-      data-themes="pitch-deck-vc,swiss-grid,editorial-serif,minimal-white">
-<div class="deck">
+<body>
+  <!-- Ambient outdoor scene -->
+  <div class="sky" aria-hidden="true">
+    <div class="sun"></div>
+    <svg class="clouds" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+      <g class="cloud cloud-a">
+        <ellipse cx="220" cy="120" rx="90" ry="36" />
+        <ellipse cx="280" cy="108" rx="70" ry="42" />
+        <ellipse cx="160" cy="118" rx="55" ry="30" />
+        <ellipse cx="250" cy="140" rx="80" ry="28" />
+      </g>
+      <g class="cloud cloud-b">
+        <ellipse cx="980" cy="90" rx="110" ry="40" />
+        <ellipse cx="1060" cy="78" rx="80" ry="48" />
+        <ellipse cx="900" cy="95" rx="60" ry="32" />
+        <ellipse cx="1020" cy="112" rx="95" ry="30" />
+      </g>
+      <g class="cloud cloud-c">
+        <ellipse cx="1400" cy="200" rx="75" ry="30" />
+        <ellipse cx="1455" cy="190" rx="55" ry="36" />
+        <ellipse cx="1355" cy="205" rx="45" ry="24" />
+      </g>
+      <g class="cloud cloud-d">
+        <ellipse cx="520" cy="210" rx="65" ry="26" />
+        <ellipse cx="570" cy="200" rx="48" ry="30" />
+        <ellipse cx="480" cy="212" rx="40" ry="22" />
+      </g>
+    </svg>
+    <svg class="landscape" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+      <!-- Soft distant hills -->
+      <path class="hill hill-far" d="M0 720 C180 640 320 680 480 700 C680 730 820 620 1020 660 C1180 690 1320 640 1600 680 L1600 900 L0 900 Z" />
+      <path class="hill hill-near" d="M0 780 C200 720 360 760 520 770 C740 785 900 720 1120 750 C1300 775 1420 740 1600 760 L1600 900 L0 900 Z" />
+      <!-- Tree silhouettes -->
+      <g class="tree tree-1">
+        <rect x="148" y="700" width="10" height="70" rx="3" class="trunk" />
+        <ellipse cx="153" cy="680" rx="42" ry="55" class="canopy" />
+        <ellipse cx="130" cy="700" rx="28" ry="36" class="canopy" />
+        <ellipse cx="178" cy="698" rx="30" ry="38" class="canopy" />
+      </g>
+      <g class="tree tree-2">
+        <rect x="1388" y="690" width="12" height="80" rx="3" class="trunk" />
+        <ellipse cx="1394" cy="665" rx="48" ry="62" class="canopy" />
+        <ellipse cx="1365" cy="690" rx="32" ry="40" class="canopy" />
+        <ellipse cx="1425" cy="688" rx="34" ry="42" class="canopy" />
+      </g>
+      <g class="tree tree-3">
+        <rect x="1280" y="730" width="8" height="50" rx="2" class="trunk" />
+        <ellipse cx="1284" cy="715" rx="30" ry="40" class="canopy" />
+        <ellipse cx="1264" cy="730" rx="20" ry="26" class="canopy" />
+        <ellipse cx="1304" cy="728" rx="22" ry="28" class="canopy" />
+      </g>
+      <g class="tree tree-4">
+        <rect x="60" y="740" width="7" height="45" rx="2" class="trunk" />
+        <ellipse cx="63.5" cy="728" rx="26" ry="34" class="canopy" />
+      </g>
+      <!-- Soft grass fringe -->
+      <path class="grass" d="M0 860 Q200 845 400 858 T800 850 T1200 862 T1600 848 L1600 900 L0 900 Z" />
+    </svg>
+  </div>
 
-  <!-- ========== 1. Cover ========== -->
-  <section class="slide cover" data-title="封面">
-    <div class="fx-bg" data-fx="constellation" aria-hidden="true"></div>
-    <div class="open-veil" aria-hidden="true"></div>
-    <div class="cover-grid">
-      <header class="cover-top open-seq" style="--d:.12s">
-        <div class="brand">
-          <span class="brand-mark"></span>
-          <span class="brand-text">MC Website · Education Portal</span>
+  <main class="deck" id="deck" tabindex="0" role="application" aria-label="Phase 1 進度簡報">
+    <!-- ========== SLIDE 1: Hero ========== -->
+    <section class="slide is-active" data-slide="0" aria-label="封面與整體狀態">
+      <div class="slide-inner">
+        <header class="hero-header">
+          <p class="eyebrow enter" data-delay="0">機構網頁優化項目</p>
+          <h1 class="enter" data-delay="1">Phase 1（MC Website）</h1>
+          <p class="subtitle enter" data-delay="2">最新進度</p>
+        </header>
+
+        <div class="hero-grid">
+          <div class="progress-hero enter" data-delay="3">
+            <div class="ring-wrap" aria-hidden="true">
+              <svg class="progress-ring" viewBox="0 0 200 200">
+                <circle class="ring-track" cx="100" cy="100" r="82" />
+                <circle class="ring-fill" cx="100" cy="100" r="82"
+                  stroke-dasharray="515.22" stroke-dashoffset="515.22"
+                  data-target="0.75" />
+              </svg>
+              <div class="ring-label">
+                <span class="ring-pct" data-count="75">0</span><span class="ring-unit">%</span>
+                <span class="ring-caption">完成度</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-status enter" data-delay="4">
+            <div class="status-pill">
+              <span class="pulse-dot"></span>
+              進行中 · UAT 2
+            </div>
+            <p class="status-lead">目標 <strong>2026年12月中</strong> 上線</p>
+            <ul class="hero-chips">
+              <li>
+                <svg class="ico" viewBox="0 0 40 40" aria-hidden="true"><use href="#ico-check"/></svg>
+                UAT 1 已完成
+              </li>
+              <li>
+                <svg class="ico" viewBox="0 0 40 40" aria-hidden="true"><use href="#ico-calendar"/></svg>
+                UAT 2：10/27–11/10
+              </li>
+              <li>
+                <svg class="ico" viewBox="0 0 40 40" aria-hidden="true"><use href="#ico-rocket"/></svg>
+                下一步：修正發現問題
+              </li>
+            </ul>
+          </div>
         </div>
-        <div class="meta-chip">進度簡報 · 2026-10-27</div>
-      </header>
 
-      <div class="cover-main">
-        <p class="eyebrow open-seq" style="--d:.35s">INSTITUTIONAL PROGRESS BRIEF</p>
-        <h1 class="cover-title open-seq" style="--d:.55s">
-          機構網頁優化項目
-          <span class="cover-sub">Phase 1（MC Website）及 Phase 2（Education Portal）最新進度</span>
-        </h1>
+        <p class="slide-hint enter" data-delay="5">點擊或按 → 繼續</p>
+      </div>
+    </section>
 
-        <div class="kpi-hero open-seq" style="--d:1.15s">
-          <div class="kpi-ring-card">
-            <svg class="ring" viewBox="0 0 120 120" aria-hidden="true">
-              <circle class="ring-track" cx="60" cy="60" r="52"/>
-              <circle class="ring-val p1" cx="60" cy="60" r="52"
-                      pathLength="100" stroke-dasharray="75 100"/>
-            </svg>
-            <div class="ring-center">
-              <span class="ring-num counter" data-to="75">0</span><span class="ring-pct">%</span>
-            </div>
-            <div class="ring-label">
-              <span class="phase-tag">PHASE 1</span>
-              <b>MC Website</b>
-              <small>進行中 · UAT 2</small>
-            </div>
-          </div>
+    <!-- ========== SLIDE 2: Details ========== -->
+    <section class="slide" data-slide="1" aria-label="進度明細">
+      <div class="slide-inner">
+        <header class="section-header">
+          <p class="eyebrow enter" data-delay="0">Phase 1 · MC Website</p>
+          <h2 class="enter" data-delay="1">進度明細</h2>
+          <p class="section-sub enter" data-delay="2">測試、整合與評估同步推進</p>
+        </header>
 
-          <div class="kpi-ring-card">
-            <svg class="ring" viewBox="0 0 120 120" aria-hidden="true">
-              <circle class="ring-track" cx="60" cy="60" r="52"/>
-              <circle class="ring-val p2" cx="60" cy="60" r="52"
-                      pathLength="100" stroke-dasharray="20 100"/>
-            </svg>
-            <div class="ring-center">
-              <span class="ring-num counter" data-to="20">0</span><span class="ring-pct">%</span>
+        <div class="cards-grid">
+          <article class="info-card enter" data-delay="3">
+            <div class="card-icon tone-green">
+              <svg viewBox="0 0 40 40" aria-hidden="true"><use href="#ico-check"/></svg>
             </div>
-            <div class="ring-label">
-              <span class="phase-tag alt">PHASE 2</span>
-              <b>Education Portal</b>
-              <small>設計及流程檢視中</small>
-            </div>
-          </div>
+            <h3>UAT 1</h3>
+            <p>完成，所有待處理問題已跟進</p>
+          </article>
 
-          <div class="goal-panel">
-            <div class="goal-kicker">PHASE 1 上線目標</div>
-            <div class="goal-date">2026<span>年</span>12<span>月中</span></div>
-            <p class="goal-note">UAT 2 進行中；11/13 進行 SRAA 及 DARS 評估</p>
-            <div class="goal-rule"></div>
-            <p class="goal-note dim">Phase 2 先完成意見整合及需求確認，再全面展開系統開發</p>
-          </div>
+          <article class="info-card enter" data-delay="4">
+            <div class="card-icon tone-teal">
+              <svg viewBox="0 0 40 40" aria-hidden="true"><use href="#ico-clipboard"/></svg>
+            </div>
+            <h3>UAT 2 時段</h3>
+            <p>10月27日至11月10日，重點測試網站功能及最終內容</p>
+          </article>
+
+          <article class="info-card enter" data-delay="5">
+            <div class="card-icon tone-blue">
+              <svg viewBox="0 0 40 40" aria-hidden="true"><use href="#ico-api"/></svg>
+            </div>
+            <h3>BOS API</h3>
+            <p>系統整合測試完成，問題已修正</p>
+          </article>
+
+          <article class="info-card enter" data-delay="6">
+            <div class="card-icon tone-violet">
+              <svg viewBox="0 0 40 40" aria-hidden="true"><use href="#ico-shield"/></svg>
+            </div>
+            <h3>安全及無障礙</h3>
+            <p>11月13日進行第二階段安全評估（SRAA）及無障礙加許計劃評估（DARS）</p>
+          </article>
         </div>
       </div>
+    </section>
 
-      <footer class="cover-foot open-seq" style="--d:1.7s">
-        <span>內部持份者進度檢視</span>
-        <span class="slide-number" data-current="1" data-total="3"></span>
-      </footer>
-    </div>
-  </section>
+    <!-- ========== SLIDE 3: Next + Key ========== -->
+    <section class="slide" data-slide="2" aria-label="下一步與重點">
+      <div class="slide-inner">
+        <header class="section-header">
+          <p class="eyebrow enter" data-delay="0">Phase 1 · MC Website</p>
+          <h2 class="enter" data-delay="1">下一步與重點</h2>
+        </header>
 
-  <!-- ========== 2. Phase 1 ========== -->
-  <section class="slide body" data-title="Phase 1">
-    <div class="sheet">
-      <header class="sheet-head" data-anim="fade-down">
-        <div>
-          <p class="eyebrow">PHASE 1 · MC WEBSITE</p>
-          <h2 class="sheet-title">進行中 UAT 2 · 目標 2026 年 12 月中上線</h2>
-        </div>
-        <div class="progress-pill">
-          <span class="pp-label">整體進度</span>
-          <span class="pp-val"><span class="counter" data-to="75">0</span>%</span>
-          <span class="pp-bar"><i style="--pct:75%"></i></span>
-        </div>
-      </header>
-
-      <div class="rail" data-anim="stagger-list">
-        <div class="rail-item done">
-          <span class="rail-dot"></span>
-          <div class="rail-body">
-            <span class="rail-chip done">完成</span>
-            <b>UAT 1</b>
-            <p>所有待處理問題已跟進</p>
-          </div>
-        </div>
-        <div class="rail-item active">
-          <span class="rail-dot"></span>
-          <div class="rail-body">
-            <span class="rail-chip active">進行中</span>
-            <b>UAT 2</b>
-            <p>10/27 – 11/10 · 網站功能及最終內容</p>
-          </div>
-        </div>
-        <div class="rail-item">
-          <span class="rail-dot"></span>
-          <div class="rail-body">
-            <span class="rail-chip">即將</span>
-            <b>SRAA / DARS</b>
-            <p>11/13 · 第二階段安全及無障礙評估</p>
-          </div>
-        </div>
-        <div class="rail-item">
-          <span class="rail-dot"></span>
-          <div class="rail-body">
-            <span class="rail-chip">目標</span>
-            <b>正式上線</b>
-            <p>2026 年 12 月中</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="card-row" data-anim="stagger-list">
-        <article class="info-tile">
-          <div class="tile-top">
-            <span class="status ok">DONE</span>
-            <h3>BOS API 系統整合</h3>
-          </div>
-          <p>整合測試完成，問題已修正。</p>
-        </article>
-        <article class="info-tile">
-          <div class="tile-top">
-            <span class="status warn">11/13</span>
-            <h3>安全及無障礙評估</h3>
-          </div>
-          <p>第二階段安全評估（SRAA）及無障礙加許計劃評估（DARS）。</p>
-        </article>
-        <article class="info-tile accent">
-          <div class="tile-top">
-            <span class="status next">NEXT</span>
+        <div class="finale-grid">
+          <article class="finale-card next-card enter" data-delay="2">
+            <div class="finale-icon">
+              <svg viewBox="0 0 40 40" aria-hidden="true"><use href="#ico-wrench"/></svg>
+            </div>
             <h3>下一步</h3>
-          </div>
-          <p>修正 UAT 2 發現的問題，確保功能與最終內容就緒。</p>
-        </article>
-      </div>
-
-      <footer class="sheet-foot">
-        <span>Phase 1 · MC Website</span>
-        <span class="slide-number" data-current="2" data-total="3"></span>
-      </footer>
-    </div>
-  </section>
-
-  <!-- ========== 3. Phase 2 + 重點 ========== -->
-  <section class="slide body" data-title="Phase 2 與重點">
-    <div class="sheet">
-      <header class="sheet-head" data-anim="fade-down">
-        <div>
-          <p class="eyebrow">PHASE 2 · EDUCATION PORTAL</p>
-          <h2 class="sheet-title">頁面設計及用戶流程檢視中</h2>
-        </div>
-        <div class="progress-pill warn">
-          <span class="pp-label">整體進度</span>
-          <span class="pp-val"><span class="counter" data-to="20">0</span>%</span>
-          <span class="pp-bar"><i style="--pct:20%"></i></span>
-        </div>
-      </header>
-
-      <div class="two-col" data-anim="stagger-list">
-        <article class="panel">
-          <h3 class="panel-title">項目現況</h3>
-          <ul class="dense-list">
-            <li>
-              <span class="li-tag">範圍</span>
-              <div>
-                <b>一站式課程平台</b>
-                <p>整合 CES、ERB 及 CEF 課程</p>
+            <p>修正 UAT 2 發現的問題</p>
+            <div class="mini-timeline" aria-hidden="true">
+              <span class="mt-dot done"></span>
+              <span class="mt-line"></span>
+              <span class="mt-dot active"></span>
+              <span class="mt-line"></span>
+              <span class="mt-dot"></span>
+              <div class="mt-labels">
+                <span>UAT 1</span>
+                <span>UAT 2</span>
+                <span>上線</span>
               </div>
-            </li>
-            <li>
-              <span class="li-tag">設計</span>
-              <div>
-                <b>初步設計與用戶流程</b>
-                <p>已與 ETCS 及開發商 i2 檢視</p>
-              </div>
-            </li>
-            <li>
-              <span class="li-tag">需求</span>
-              <div>
-                <b>流程釐清中</b>
-                <p>報名 · 會員管理 · 付款 · 學習管理 · 報表</p>
-              </div>
-            </li>
-            <li>
-              <span class="li-tag next">下一步</span>
-              <div>
-                <b>整合持份者意見</b>
-                <p>修訂設計及流程，確認開發範圍及時間表</p>
-              </div>
-            </li>
-          </ul>
-        </article>
-
-        <aside class="keystone" data-anim="fade-up">
-          <p class="keystone-kicker">重點</p>
-          <div class="key-block">
-            <span class="key-num">01</span>
-            <div>
-              <h3>Phase 1 目標</h3>
-              <p class="key-lead">2026 年 12 月中上線</p>
-              <p class="key-desc">UAT 2 進行中（約 75%）；11/13 進行 SRAA 及 DARS。</p>
             </div>
-          </div>
-          <div class="key-block">
-            <span class="key-num">02</span>
-            <div>
-              <h3>Phase 2 路徑</h3>
-              <p class="key-lead">先完成意見整合及需求確認</p>
-              <p class="key-desc">再全面展開系統開發。目前約 20%，聚焦設計與用戶流程。</p>
+          </article>
+
+          <article class="finale-card key-card enter" data-delay="3">
+            <div class="finale-icon glow">
+              <svg viewBox="0 0 40 40" aria-hidden="true"><use href="#ico-target"/></svg>
             </div>
-          </div>
-        </aside>
+            <p class="key-label">重點</p>
+            <h3>Phase 1 目標</h3>
+            <p class="key-date">2026年12月中上線</p>
+            <p class="key-note">穩步推進測試與評估，朝目標如期發佈</p>
+          </article>
+        </div>
+
+        <footer class="deck-footer enter" data-delay="4">
+          <span>機構網頁優化項目</span>
+          <span class="dot">·</span>
+          <span>Phase 1（MC Website）</span>
+        </footer>
       </div>
+    </section>
+  </main>
 
-      <footer class="sheet-foot">
-        <span>Phase 2 · Education Portal · 重點</span>
-        <span class="slide-number" data-current="3" data-total="3"></span>
-      </footer>
-    </div>
-  </section>
+  <!-- Nav -->
+  <nav class="nav" aria-label="簡報導航">
+    <button type="button" class="nav-btn" id="prevBtn" aria-label="上一頁">‹</button>
+    <div class="dots" id="dots" role="tablist"></div>
+    <button type="button" class="nav-btn" id="nextBtn" aria-label="下一頁">›</button>
+  </nav>
+  <div class="progress-bar" aria-hidden="true"><div class="progress-bar-fill" id="barFill"></div></div>
 
-</div>
-<script src="assets/runtime.js"></script>
-<script src="assets/animations/fx-runtime.js"></script>
+  <!-- Icon sprite -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+    <symbol id="ico-check" viewBox="0 0 40 40">
+      <circle cx="20" cy="20" r="16" fill="none" stroke="currentColor" stroke-width="2.2"/>
+      <path d="M12 20.5 L17.5 26 L28 14.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="ico-clipboard" viewBox="0 0 40 40">
+      <rect x="11" y="9" width="18" height="24" rx="3.5" fill="none" stroke="currentColor" stroke-width="2.2"/>
+      <rect x="15" y="6" width="10" height="6" rx="2" fill="none" stroke="currentColor" stroke-width="2"/>
+      <path d="M16 18h8M16 23h8M16 28h5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="ico-api" viewBox="0 0 40 40">
+      <circle cx="12" cy="20" r="5" fill="none" stroke="currentColor" stroke-width="2.2"/>
+      <circle cx="28" cy="12" r="4.5" fill="none" stroke="currentColor" stroke-width="2.2"/>
+      <circle cx="28" cy="28" r="4.5" fill="none" stroke="currentColor" stroke-width="2.2"/>
+      <path d="M16.5 17.5 L23.5 13.5M16.5 22.5 L23.5 26.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="ico-shield" viewBox="0 0 40 40">
+      <path d="M20 6 L32 11 V20 C32 27 26.5 32.5 20 35 C13.5 32.5 8 27 8 20 V11 Z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/>
+      <path d="M15 20 L18.5 23.5 L25.5 15.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="ico-rocket" viewBox="0 0 40 40">
+      <path d="M20 6 C26 10 28 18 26 26 L20 34 L14 26 C12 18 14 10 20 6 Z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/>
+      <circle cx="20" cy="18" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+      <path d="M14 26 L10 30 M26 26 L30 30" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="ico-calendar" viewBox="0 0 40 40">
+      <rect x="9" y="11" width="22" height="20" rx="3.5" fill="none" stroke="currentColor" stroke-width="2.2"/>
+      <path d="M9 17h22M15 8v6M25 8v6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+      <circle cx="16" cy="23" r="1.6" fill="currentColor"/>
+      <circle cx="20" cy="23" r="1.6" fill="currentColor"/>
+      <circle cx="24" cy="23" r="1.6" fill="currentColor"/>
+    </symbol>
+    <symbol id="ico-wrench" viewBox="0 0 40 40">
+      <path d="M26 10 a7 7 0 0 0-9.5 9.5 L9 27 a3 3 0 0 0 4 4 l7.5-7.5 A7 7 0 0 0 30 14 l-4.5 1.5 Z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="ico-target" viewBox="0 0 40 40">
+      <circle cx="20" cy="20" r="14" fill="none" stroke="currentColor" stroke-width="2.2"/>
+      <circle cx="20" cy="20" r="8" fill="none" stroke="currentColor" stroke-width="2.2"/>
+      <circle cx="20" cy="20" r="3" fill="currentColor"/>
+    </symbol>
+  </svg>
+
+  <script src="app.js"></script>
 </body>
 </html>
